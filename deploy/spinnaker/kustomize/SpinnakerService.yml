@@ -18,12 +18,7 @@ spec:
     profiles:
       clouddriver: {} # is the contents of ~/.hal/default/profiles/clouddriver.yml
       # deck has a special key "settings-local.js" for the contents of settings-local.js
-      deck:
-        # settings-local.js - contents of ~/.hal/default/profiles/settings-local.js
-        # Use the | YAML symbol to indicate a block-style multiline string
-        settings-local.js: |
-          window.spinnakerSettings.feature.kustomizeEnabled = true;
-          window.spinnakerSettings.feature.artifactsRewrite = true;
+      deck: {}
       echo: {}    # is the contents of ~/.hal/default/profiles/echo.yml
       fiat: {}    # is the contents of ~/.hal/default/profiles/fiat.yml
       front50: {} # is the contents of ~/.hal/default/profiles/front50.yml
@@ -73,23 +68,23 @@ spec:
 
       # annotations to be set on Kubernetes LoadBalancer type
       # they will only apply to spin-gate, spin-gate-x509, or spin-deck
-      annotations:
-        service.beta.kubernetes.io/aws-load-balancer-backend-protocol: http
+      #annotations:
+        #service.beta.kubernetes.io/aws-load-balancer-backend-protocol: http
         # uncomment the line below to provide an AWS SSL certificate to terminate SSL at the LoadBalancer
         #service.beta.kubernetes.io/aws-load-balancer-ssl-cert: arn:aws:acm:us-west-2:9999999:certificate/abc-123-abc
 
       # provide an override to the exposing KubernetesService
-      overrides:
+      #overrides:
       # Provided below is the example config for the Gate-X509 configuration
-#        deck:
-#          annotations:
+        #deck:
+          #annotations:
 #            service.beta.kubernetes.io/aws-load-balancer-ssl-cert: arn:aws:acm:us-west-2:9999999:certificate/abc-123-abc
 #            service.beta.kubernetes.io/aws-load-balancer-backend-protocol: http
-#        gate:
-#          annotations:
+        #gate:
+          #annotations:
 #            service.beta.kubernetes.io/aws-load-balancer-ssl-cert: arn:aws:acm:us-west-2:9999999:certificate/abc-123-abc
 #            service.beta.kubernetes.io/aws-load-balancer-backend-protocol: https  # X509 requires https from LoadBalancer -> Gate
-#       gate-x509:
+        #gate-x509:
 #         annotations:
 #           service.beta.kubernetes.io/aws-load-balancer-backend-protocol: tcp
 #           service.beta.kubernetes.io/aws-load-balancer-ssl-cert: null

@@ -7,6 +7,7 @@ spec:
   spinnakerConfig:
     # spec.spinnakerConfig.service-settings - This section contains the YAML of the service's service-setting
     # see https://www.spinnaker.io/reference/halyard/custom/#tweakable-service-settings for available settings
+
     service-settings:
       clouddriver: {}
       deck: {}

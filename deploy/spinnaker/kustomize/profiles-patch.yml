@@ -5,9 +5,8 @@ metadata:
 spec:
   # spec.spinnakerConfig - This section is how to specify configuration spinnaker
   spinnakerConfig:
-    # spec.spinnakerConfig.profiles - This section contains the YAML of each service's profile
-    profiles:
-      clouddriver: {} # is the contents of ~/.hal/default/profiles/clouddriver.yml
+    # spec.spinnakerConfig.profiles - This section contains the YAML of each service's profile   
+      #clouddriver: {} # is the contents of ~/.hal/default/profiles/clouddriver.yml
       # deck has a special key "settings-local.js" for the contents of settings-local.js
       deck:
         # settings-local.js - contents of ~/.hal/default/profiles/settings-local.js
@@ -19,7 +18,10 @@ spec:
       fiat: {}    # is the contents of ~/.hal/default/profiles/fiat.yml
       front50: {} # is the contents of ~/.hal/default/profiles/front50.yml
       gate: {}    # is the contents of ~/.hal/default/profiles/gate.yml
-      igor: {}    # is the contents of ~/.hal/default/profiles/igor.yml
+      igor:     # is the contents of ~/.hal/default/profiles/igor.yml
+        travis:
+          regexes:
+          - /Upload https?:\/\/.+\/(.+\.(deb|rpm))/
       kayenta: {} # is the contents of ~/.hal/default/profiles/kayenta.yml
       orca: {}    # is the contents of ~/.hal/default/profiles/orca.yml
       rosco: {}   # is the contents of ~/.hal/default/profiles/rosco.yml

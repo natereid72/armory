@@ -127,10 +127,10 @@ spec:
           bucket: spinnaker # Replace with the name of the S3 bucket created previously
           rootFolder: front50
           #region: us-west-2        # Replace with correct bucket's region
-          accessKeyId: HnHSBdicNt         # (Optional, set only when using an IAM user to authenticate to the bucket instead of an IAM role)
-          secretAccessKey: 6wY0QCPuyVKjGGR8gkzPPNAf1Kk2MWOKiMkzSM23     # (Optional, set only when using an IAM user to authenticate to the bucket instead of an IAM role)
+          accessKeyId: minio         # (Optional, set only when using an IAM user to authenticate to the bucket instead of an IAM role)
+          secretAccessKey: minio-key     # (Optional, set only when using an IAM user to authenticate to the bucket instead of an IAM role)
           pathStyleAccess: true
-          endpoint: http://minio.minio.svc.cluster.local:9000   #https://minio:9000
+          endpoint: http://minio-1613146386.minio.svc.cluster.local:9000   #https://minio:9000
       features:
         artifacts: true
       providers:
