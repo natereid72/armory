@@ -7,7 +7,11 @@ spec:
   spinnakerConfig:
   # spec.spinnakerConfig.config - This section contains the contents of a deployment found in a halconfig .deploymentConfigurations[0]
     config:
+<<<<<<< HEAD
       version: 2.24.0  # the version of Spinnaker to be deployed
+=======
+      version: 2.23.4  # the version of Spinnaker to be deployed
+>>>>>>> caae68208b8c978b9001ad004cb5c9a3f384dc25
       persistentStorage:
         persistentStoreType: s3
         s3:
@@ -22,6 +26,7 @@ spec:
         kubernetes:
           enabled: true
           accounts:
+<<<<<<< HEAD
             - name: k8s-prod
               kubeconfigFile: encryptedFile:k8s!n:spin-secrets!k:kubeconfig-prod
               onlySpinnakerManaged: false
@@ -30,6 +35,19 @@ spec:
               serviceAccount: false
           primaryAccount: k8s-prod
 
+=======
+            - name: prod
+              kubeconfigFile: encryptedFile:k8s!n:spin-secrets!k:kubeconfig-prod
+              onlySpinnakerManaged: true
+              providerVersion: V2
+              liveManifestCalls: true
+              #serviceAccount: true
+              #namespaces:
+              #- default
+              #- acme-air
+          primaryAccount: kind-kindprod
+      
+>>>>>>> caae68208b8c978b9001ad004cb5c9a3f384dc25
       ci:
         travis:
           enabled: true
