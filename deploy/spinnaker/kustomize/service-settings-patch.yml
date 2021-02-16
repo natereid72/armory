@@ -12,13 +12,10 @@ spec:
       clouddriver: {}
       deck: {}
       echo: {}
-      fiat:
-        enabled: true
+      fiat: {}
       front50: {}
       gate: {}
-      igor:
-        enabled: true
-      kayenta:
-        enabled: true
+      igor: {}
+      kayenta: {}
       orca: {}
       rosco: {}
