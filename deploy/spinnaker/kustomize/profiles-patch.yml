@@ -18,7 +18,10 @@ spec:
       fiat: {}    # is the contents of ~/.hal/default/profiles/fiat.yml
       front50: {} # is the contents of ~/.hal/default/profiles/front50.yml
       gate: {}    # is the contents of ~/.hal/default/profiles/gate.yml
-      igor: {}   # is the contents of ~/.hal/default/profiles/igor.yml
+      igor:   # is the contents of ~/.hal/default/profiles/igor.yml
+        travis:
+          regexes:
+          - /Upload https?:\/\/.+\/(.+\.(deb|rpm))/
       kayenta: {} # is the contents of ~/.hal/default/profiles/kayenta.yml
       orca: {}    # is the contents of ~/.hal/default/profiles/orca.yml
       rosco: {}   # is the contents of ~/.hal/default/profiles/rosco.yml
