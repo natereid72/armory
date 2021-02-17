@@ -1,23 +1,13 @@
 apiVersion: spinnaker.armory.io/v1alpha2
 kind: SpinnakerService
 metadata:
-  name: spinnaker
+  name: spinnaker  # name doesn't matter since this is a patch
 spec:
   # spec.spinnakerConfig - This section is how to specify configuration spinnaker
   spinnakerConfig:
-  # spec.spinnakerConfig.config - This section contains the contents of a deployment found in a halconfig .deploymentConfigurations[0]
-    config:
-      version: 2.24.0  # the version of Spinnaker to be deployed
-      persistentStorage:
-        persistentStoreType: s3
-        s3:
-          bucket: spinnaker # Replace with the name of the S3 bucket created previously
-          rootFolder: front50
-          accessKeyId: minio         # (Optional, set only when using an IAM user to authenticate to the bucket instead of an IAM role)
-          secretAccessKey: minio-key     # (Optional, set only when using an IAM user to authenticate to the bucket instead of an IAM role)
-          pathStyleAccess: true
-          endpoint: http://minio-1613146386.minio.svc.cluster.local:9000 
-
+    # spec.spinnakerConfig.profiles - This section contains the YAML of each service's profile   
+      #clouddriver: {} # is the contents of ~/.hal/default/profiles/clouddriver.yml
+      # deck has a special key "settings-local.js" for the contents of settings-local.js
       providers:
         kubernetes:
           enabled: true
@@ -46,13 +36,3 @@ spec:
               clientTimeoutMillis: 60000         # Timeout time in milliseconds for this repository.
               cacheThreads: 1                    # How many threads to cache all provided repos on. Really only useful if you have a ton of repos.
               paginateSize: 100                  # Paginate size for the docker repository _catalog endpoint.
-
-      ci:
-        travis:
-          enabled: true
-          masters:
-          - name: ci
-            permissions: {}
-            baseUrl: https://travis-ci.com
-            address: https://api.travis-ci.com
-            githubToken: encrypted:k8s!n:spin-secrets!k:github-token
