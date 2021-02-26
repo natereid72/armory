@@ -4,6 +4,4 @@
    
    k apply -f deploy/crds/
    
-   k apply -n spinnaker-operator -f deploy/operator/cluster
-   
-   k apply -f ./armory-config.yaml 
+   k apply -n spinnaker-operator -k armory/deploy/spinnaker/kustomize/
