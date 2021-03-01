@@ -1,7 +1,8 @@
    deploy minio, create spinnaker bucket and front50 folder
+   
    helm install my-minio --set accessKey=minio,secretKey=miniominio,persistence.size=50Gi minio/minio
-   create spinnaker bucket with front50 root folder
-      edit armory config for minio 
+   
+   edit armory config for minio 
 ```      
         persistentStorage:
           persistentStoreType: s3
