@@ -1,5 +1,5 @@
    deploy minio, create spinnaker bucket and front50 folder
-      helm install --set accessKey=myaccesskey,secretKey=mysecretkey --generate-name minio/minio
+      helm install my-minio --set accessKey=myaccesskey,secretKey=mysecretkey,persistence.size=50Gi minio/minio
       edit armory config for minio 
    
    k apply -f deploy/crds/
