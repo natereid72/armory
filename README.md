@@ -16,8 +16,6 @@
 ```
    k apply -f deploy/crds/
    
-   k create ns spinnaker-operator
-   
    (create ns spinnaker-operator and spinnaker)
    
    k -n spinnaker-operator apply -f deploy/operator/cluster
