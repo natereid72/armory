@@ -2,6 +2,8 @@
    
    helm install my-minio --set accessKey=minio,secretKey=miniominio,persistence.size=50Gi minio/minio
    
+   Expose my-minio as clusteIP
+   
    edit armory config for minio 
 ```      
         persistentStorage:
