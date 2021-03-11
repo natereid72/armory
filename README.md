@@ -16,9 +16,18 @@
             pathStyleAccess: true
             endpoint: http://my-minio.minio.svc.cluster.local:9000
 ```
+   
+   edit patch for k8s kubeconfig
+   
+   edit patch for CI
+   
+   edit patch for docker 
+   
+   create spin-secrets for kube config, CI, and Docker
+   
    k apply -f deploy/crds/
    
-   (create ns spinnaker-operator and spinnaker)
+   create ns spinnaker-operator and spinnaker
    
    k -n spinnaker-operator apply -f deploy/operator/cluster
    
