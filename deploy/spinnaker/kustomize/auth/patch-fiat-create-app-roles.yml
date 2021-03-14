@@ -1,0 +1,27 @@
+apiVersion: spinnaker.armory.io/v1alpha2
+kind: SpinnakerService
+metadata:
+  name: spinnaker
+spec:
+  spinnakerConfig:
+    profiles:
+      fiat:
+        auth:
+          permissions:
+            provider:
+              application: aggregate
+            source:
+              application:
+                prefix:
+                  enabled: true
+                  prefixes:
+                  - prefix: "*"
+                    permissions:
+                      CREATE:
+                      - "group-b-spingo" # group members that CAN create applications if enabled
+                      READ:
+                      - "spinnaker-admins"
+                      WRITE:
+                      - "spinnaker-admins"
+                      EXECUTE:
+                      - "spinnaker-admins"

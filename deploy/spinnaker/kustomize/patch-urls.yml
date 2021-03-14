@@ -1,0 +1,28 @@
+#-----------------------------------------------------------------------------------------------------------------
+# Example configuration for spinnaker public facing URLs.
+#-----------------------------------------------------------------------------------------------------------------
+apiVersion: spinnaker.armory.io/v1alpha2
+kind: SpinnakerService
+metadata:
+  name: spinnaker
+spec:
+  spinnakerConfig:
+    config:
+      security:
+        apiSecurity:
+          ssl:
+            enabled: false
+          overrideBaseUrl: https://spin.vrelevant.net/api/v1  # Public API (Gate) url. Using the same hostname for deck and gate only works when exposing spinnaker with ingress.
+          corsAccessPattern: https://spin.vrelevant.net
+        uiSecurity:
+          ssl:
+            enabled: false
+          overrideBaseUrl: https://spin.vrelevant.met     # Public UI (Deck) url.
+    profiles:
+      gate:
+        server:
+          servlet:
+            context-path: /api/v1
+    service-settings:
+      gate:
+        healthEndpoint: /api/v1/health

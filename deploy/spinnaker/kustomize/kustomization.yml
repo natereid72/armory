@@ -9,4 +9,8 @@ patchesStrategicMerge:
 - profiles-patch.yml
 - files-patch.yml
 - service-settings-patch.yml
-
+- patch-urls.yml
+- ./auth/patch-basic-auth.yml
+- ./auth/patch-file-authz.yml
+- ./auth/patch-fiat-create-app-roles.yml
+- ./auth/patch-gate-tomcat-headers.yml

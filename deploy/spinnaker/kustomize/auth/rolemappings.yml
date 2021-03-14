@@ -1,0 +1,4 @@
+users:
+- username: natelab
+  roles:
+  - spinnaker-admins
