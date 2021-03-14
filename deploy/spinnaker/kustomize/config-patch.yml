@@ -23,7 +23,7 @@ spec:
           enabled: true
           accounts:
             - name: k8s-prod
-              kubeconfigFile: encryptedFile:k8s!n:spin-secrets!k:kubeconfig-prod
+              kubeconfigFile: encryptedFile:k8s!n:spin-secrets!k:kubeconfig
               onlySpinnakerManaged: false
               providerVersion: V2
               liveManifestCalls: true
