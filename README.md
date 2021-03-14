@@ -1,3 +1,8 @@
+   If not already performed, install:
+      - MetalLB
+      - Contour
+      - cert-manager
+   
    deploy minio, create spinnaker bucket and front50 folder
    
    helm install my-minio --set accessKey=minio,secretKey=miniominio,persistence.size=50Gi minio/minio
