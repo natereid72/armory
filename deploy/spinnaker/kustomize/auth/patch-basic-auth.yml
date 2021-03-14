@@ -18,4 +18,4 @@ spec:
           security:
             user:
               name: encrypted:k8s!n:spin-secrets!k:spin-http-user                # The basic auth username you want to use.
-              password: encrypted:k8s!n:spin-secrets!k:spin-http-password        # The basic auth password you want to use.
+              password: encrypted:k8s!n:spin-secrets!k:spin-http-pw      # The basic auth password you want to use.
