@@ -17,7 +17,7 @@ spec:
         uiSecurity:
           ssl:
             enabled: false
-          overrideBaseUrl: https://spin.vrelevant.met     # Public UI (Deck) url.
+          overrideBaseUrl: https://spin.vrelevant.net     # Public UI (Deck) url.
     profiles:
       gate:
         server:
