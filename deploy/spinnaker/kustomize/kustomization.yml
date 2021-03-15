@@ -14,4 +14,4 @@ patchesStrategicMerge:
 - ./auth/patch-basic-auth.yml
 #- ./auth/patch-file-authz.yml
 #- ./auth/patch-fiat-create-app-roles.yml
-- ./auth/patch-gate-tomcat-headers.yml
+#- ./auth/patch-gate-tomcat-headers.yml
