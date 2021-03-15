@@ -10,7 +10,6 @@ patchesStrategicMerge:
 - files-patch.yml
 - service-settings-patch.yml
 - patch-urls.yml
-- patch-deck.yml
 - ./auth/patch-basic-auth.yml
 #- ./auth/patch-file-authz.yml
 #- ./auth/patch-fiat-create-app-roles.yml
