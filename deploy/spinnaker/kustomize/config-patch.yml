@@ -51,5 +51,5 @@ spec:
             baseUrl: https://travis-ci.com
             address: https://api.travis-ci.com
             githubToken: encrypted:k8s!n:spin-secrets!k:github-token
-            regexes:
+          regexes:
           - /Upload https?:\/\/.+\/(.+\.(deb|rpm))/
