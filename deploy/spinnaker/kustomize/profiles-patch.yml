@@ -14,6 +14,7 @@ spec:
         settings-local.js: |
           window.spinnakerSettings.feature.kustomizeEnabled = true;
           window.spinnakerSettings.feature.artifactsRewrite = true;
+          window.spinnakerSettings.authEnabled = true; // Basic Authentication security/patch-basic-auth.yml
       echo: {}    # is the contents of ~/.hal/default/profiles/echo.yml
       fiat: {}    # is the contents of ~/.hal/default/profiles/fiat.yml
       front50: {} # is the contents of ~/.hal/default/profiles/front50.yml
