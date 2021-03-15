@@ -5,7 +5,7 @@
    
    deploy minio, create spinnaker bucket and front50 folder
    
-   helm install my-minio --set accessKey=minio,secretKey=miniominio,persistence.size=50Gi minio/minio
+   `helm install my-minio --set accessKey=minio,secretKey=miniominio,persistence.size=50Gi minio/minio`
    
    Expose my-minio as clusteIP
    
