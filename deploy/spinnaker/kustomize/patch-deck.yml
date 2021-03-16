@@ -11,3 +11,12 @@ spec:
           // window.spinnakerSettings.feature.functions = true  // AWS Lambda accounts/aws/patch-aws-lambda-plugin.yml
           // window.spinnakerSettings.feature.travis = true;
           window.spinnakerSettings.authEnabled = true; // Basic Authentication security/patch-basic-auth.yml
+          window.spinnakerSettings.feature.terraform = true;
+
+      clouddriver:
+        artifacts:
+          gitRepo:
+            enabled: true
+            accounts:
+            - name: gitrepo
+              token: encrypted:k8s!n:spin-secrets!k:github-token # GitHub personal access token

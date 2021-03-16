@@ -43,6 +43,19 @@ spec:
               repositories:
               - natereid/peepsapi
 
+      armory:
+        terraform:
+          enabled: true
+
+      features:
+        artifacts: true
+      artifacts:
+        github:
+          enabled: true
+          accounts:
+          - name: github
+            token: encrypted:k8s!n:spin-secrets!k:github-token
+
       ci:
         travis:
           enabled: true
@@ -51,5 +64,7 @@ spec:
             baseUrl: https://travis-ci.com
             address: https://api.travis-ci.com
             githubToken: encrypted:k8s!n:spin-secrets!k:github-token
-          regexes:
-          - /Upload https?:\/\/.+\/(.+\.(deb|rpm))/
+            permissions: {} 
+          # regexes:
+          # - /Upload https?:\/\/.+\/(.+\.(deb|rpm))/
+
