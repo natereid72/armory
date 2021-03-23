@@ -1,13 +1,10 @@
 apiVersion: spinnaker.armory.io/v1alpha2
 kind: SpinnakerService
 metadata:
-  name: spinnaker  # name doesn't matter since this is a patch
+  name: spinnaker
 spec:
-  # spec.spinnakerConfig - This section is how to specify configuration spinnaker
   spinnakerConfig:
-    # spec.spinnakerConfig.profiles - This section contains the YAML of each service's profile   
-      #clouddriver: {} # is the contents of ~/.hal/default/profiles/clouddriver.yml
-      # deck has a special key "settings-local.js" for the contents of settings-local.js
+    config:
       providers:
         kubernetes:
           enabled: true
@@ -25,14 +22,10 @@ spec:
           primaryAccount: dockerhub # Account with search priority. (Required when using a locally deployed registry.)
           accounts:
             - name: dockerhub
-              requiredGroupMembership: [] # A user must be a member of at least one specified group in order to make changes to this account's cloud resources.
               providerVersion: V1
-              permissions: {}
               address: https://index.docker.io   # The registry address you want to pull and deploy images from. For example: index.docker.io - DockerHub quay.io - Quay gcr.io - Google Container Registry (GCR) [us|eu|asia].gcr.io - Regional GCR localhost - Locally deployed registry
               username: natereid             # Your docker registry username
               password: encrypted:k8s!n:spin-secrets!k:dockerhub-pw                      # Your docker registry password. This field support "encrypted" secret references.
               email: fake.email@spinnaker.io     # Your docker registry email (often this only needs to be well-formed, rather than be a real address)
-              cacheIntervalSeconds: 30           # How many seconds elapse between polling your docker registry. Certain registries are sensitive to over-polling, and larger intervals (e.g. 10 minutes = 600 seconds) are desirable if you're seeing rate limiting.
-              clientTimeoutMillis: 60000         # Timeout time in milliseconds for this repository.
-              cacheThreads: 1                    # How many threads to cache all provided repos on. Really only useful if you have a ton of repos.
-              paginateSize: 100                  # Paginate size for the docker repository _catalog endpoint.
+              repositories:
+              - natereid/peepsapi

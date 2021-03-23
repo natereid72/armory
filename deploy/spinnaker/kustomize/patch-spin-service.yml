@@ -6,19 +6,21 @@ spec:
   # spec.spinnakerConfig - This section is how to specify configuration spinnaker
   spinnakerConfig:
     # spec.spinnakerConfig.config - This section contains the contents of a deployment found in a halconfig .deploymentConfigurations[0]
-    config:
-      # version: 0.0.0   # the version of Spinnaker to be deployed, see config-patch.yml
-      # persistentStorage:
-      #   persistentStoreType: s3
-      #   s3:
-      #     bucket: mybucket
-      #     rootFolder: front50
-
-    # spec.spinnakerConfig.profiles - This section contains the YAML of each service's profile
     profiles:
-      clouddriver: {} # is the contents of ~/.hal/default/profiles/clouddriver.yml
+      clouddriver: # is the contents of ~/.hal/default/profiles/clouddriver.yml
       # deck has a special key "settings-local.js" for the contents of settings-local.js
-      deck: {}
+        artifacts:
+          gitRepo:
+            enabled: true
+            accounts:
+            - name: gitrepo
+              token: encrypted:k8s!n:spin-secrets!k:github-token # GitHub personal access token
+      deck:
+        settings-local.js: |
+          // window.spinnakerSettings.feature.functions = true  // AWS Lambda accounts/aws/patch-aws-lambda-plugin.yml
+          // window.spinnakerSettings.feature.travis = true;
+          window.spinnakerSettings.authEnabled = true; // Basic Authentication security/patch-basic-auth.yml
+          window.spinnakerSettings.feature.terraform = true;
       echo: {}    # is the contents of ~/.hal/default/profiles/echo.yml
       fiat: {}    # is the contents of ~/.hal/default/profiles/fiat.yml
       front50: {} # is the contents of ~/.hal/default/profiles/front50.yml
@@ -58,34 +60,3 @@ spec:
   #      profiles__rosco__packer__my_custom_script.sh: |
   #        #!/bin/bash -e
   #        echo "hello world!"
-
-
-  # spec.expose - This section defines how Spinnaker should be publicly exposed
-  expose:
-    type: service  # Kubernetes LoadBalancer type (service/ingress), note: only "service" is supported for now
-    service:
-      type: LoadBalancer
-
-      # annotations to be set on Kubernetes LoadBalancer type
-      # they will only apply to spin-gate, spin-gate-x509, or spin-deck
-      #annotations:
-        #service.beta.kubernetes.io/aws-load-balancer-backend-protocol: http
-        # uncomment the line below to provide an AWS SSL certificate to terminate SSL at the LoadBalancer
-        #service.beta.kubernetes.io/aws-load-balancer-ssl-cert: arn:aws:acm:us-west-2:9999999:certificate/abc-123-abc
-
-      # provide an override to the exposing KubernetesService
-      #overrides:
-      # Provided below is the example config for the Gate-X509 configuration
-        #deck:
-          #annotations:
-#            service.beta.kubernetes.io/aws-load-balancer-ssl-cert: arn:aws:acm:us-west-2:9999999:certificate/abc-123-abc
-#            service.beta.kubernetes.io/aws-load-balancer-backend-protocol: http
-        #gate:
-          #annotations:
-#            service.beta.kubernetes.io/aws-load-balancer-ssl-cert: arn:aws:acm:us-west-2:9999999:certificate/abc-123-abc
-#            service.beta.kubernetes.io/aws-load-balancer-backend-protocol: https  # X509 requires https from LoadBalancer -> Gate
-        #gate-x509:
-#         annotations:
-#           service.beta.kubernetes.io/aws-load-balancer-backend-protocol: tcp
-#           service.beta.kubernetes.io/aws-load-balancer-ssl-cert: null
-#         publicPort: 443
