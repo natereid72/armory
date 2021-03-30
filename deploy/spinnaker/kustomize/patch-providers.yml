@@ -11,7 +11,7 @@ spec:
           accounts:
             - name: k8s-prod
               kubeconfigFile: encryptedFile:k8s!n:spin-secrets!k:kubeconfig
-              onlySpinnakerManaged: false
+              onlySpinnakerManaged: true
               providerVersion: V2
               liveManifestCalls: true
               serviceAccount: false
