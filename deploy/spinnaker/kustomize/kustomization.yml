@@ -6,11 +6,11 @@ resources:
 # Apply the patches top down order
 patchesStrategicMerge:
 - patch-config.yml
-- patch-files.yml
+#- patch-files.yml
 - patch-spin-service.yml
 - patch-urls.yml
 - patch-expose.yml
-- patch-providers.yml
+#- patch-providers.yml
 #- ./auth/patch-basic-auth.yml
 #- ./auth/patch-file-authz.yml
 #- ./auth/patch-fiat-create-app-roles.yml
