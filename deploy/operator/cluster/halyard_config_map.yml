@@ -11,11 +11,10 @@ data:
       config:
         input:
           bucket: halconfig
-          region: us-west-2
-    secrets:
-      vault:
-        enabled: false
-        url: https://vault.url
-        path: example
-        role: example
-        authMethod: KUBERNETES
+#    secrets:
+#      vault:
+#        enabled: false
+#        url: https://vault.url
+#        path: example
+#        role: example
+#        authMethod: KUBERNETES
