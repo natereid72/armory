@@ -5,9 +5,7 @@ description: >
   Learn how to install the Armory Agent in your Kubernetes and Armory Enterprise environments.
 weight: 2
 ---
-![Proprietary](/images/proprietary.svg)
-
-#### This feature requires an Armory licensed entitlement.
+![Proprietary](/images/proprietary.svg) This feature requires an Armory licensed entitlement.
 
 ## Overview
 
