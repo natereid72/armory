@@ -38,11 +38,11 @@ The Agent can use a kubeconfig file loaded as a K8s secret (This is only appropr
 
 ## Step 1: Agent Clouddriver plugin installation
 
-This step is performed in the cluster the Spinnaker service is running in. You will add the Agent plugin to Clouddriver and expose it as type `LoadBalancer` on gRPC port `9091`.
+This step is performed in the cluster the Spinnaker service is running in. You will add the Clouddriver plugin and expose it as type `LoadBalancer` on gRPC port `9091`.
 
-To modify Clouddriver, add this manifest to your Kustomize patches:
+Add this manifest to your Kustomize patches:
 
-_Take note that you need to ensure the plugin version needs to be compatible with your Spinnaker version. See the comments in the yaml_
+_Take note to ensure the plugin version is compatible with the Spinnaker version. See the comments in the below manifest_
 
 ```yaml
 # The plugin version (see kubesvc-plugin below) must be comatible with the spinnaker version, check here: https://docs.armory.io/docs/armory-agent/armory-agent-quick/#compatibility-matrix
