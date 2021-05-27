@@ -32,7 +32,7 @@ Communication from the Agent to Clouddriver occurs over gRPC port 9091.
 
 The Agent can use a kubeconfig file loaded as a K8s secret (This is only appropriate when the agent runs in a separate cluster from the target cluster), or as a service account in the cluster it resides in. Running Agent in the target cluster with a service account is the preferred model. 
 
-## Step 1: Agent Clouddriver plugin installation
+## Step 1: Agent Clouddriver Plugin Installation
 
 This step is performed in the cluster Spinnaker service is running in. You will add the Clouddriver plugin and expose it as type `LoadBalancer` on gRPC port `9091`. In step 2, the Agent will be configured to communicate with Clouddriver.
 
@@ -125,7 +125,7 @@ Once both manifests are configured, apply the update. Use ```kubectl get svc spi
 
 You can also use netcat to confirm Clouddriver is listening on port 9091:  ```nc -zv [LB address] 9091```
 
-## Step 2: Agent installation
+## Step 2: Agent Installation
 
 This step is performed in the deployment target cluster.
 
