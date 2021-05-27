@@ -133,11 +133,7 @@ You can also use netcat to confirm Clouddriver is listening on port 9091:  ```nc
 
 This step is performed in the deployment target cluster.
 
-This installation is intended as a quickstart and does not include mTLS configuration. We will use insecure config for connecting to Clouddriver. For this, the Agent will be installed in a remote cluster and configured with a K8s service account. 
-
-In this model, you deploy the agent to each remote cluster you need to deploy to. You will create a K8s service account in the cluster and specify it in the Agent deployment manifest to provide entitlement to deploy.
-
-You will also create a configmap for the Agent pod. This defines the config for the Agent.
+This installation is intended as a quickstart and does not include mTLS configuration. Insecure config will be used for connecting to Clouddriver. The Agent will be installed in the deployment target cluster and configured with a K8s service account. 
 
 Create a namespace for the Agent to run in: ```kubectl create ns spin-agent```
 
