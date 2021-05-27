@@ -6,7 +6,8 @@ description: >
 weight: 2
 ---
 ![Proprietary](/images/proprietary.svg)
-### This feature requires an Armory licensed entitlement.
+
+#### This feature requires an Armory licensed entitlement.
 
 ## Overview
 
