@@ -8,6 +8,10 @@ weight: 2
 ![Proprietary](/images/proprietary.svg)
 ### This feature requires an Armory licensed entitlement.
 
+## Overview
+
+The Agent consists of a plugin to Spinnaker's Clouddriver service and a K8s deployment that connects to Clouddriver. You can review the architecture in the Armory Agent [overview]({{< ref "armory-agent" >}}).
+
 ## {{% heading "prereq" %}}
 
 * This guide assumes you're using the Armory Operator to install Spinnaker, with the Kustomize method from the [spinnaker-kustomize-patch repo](https://github.com/armory/spinnaker-kustomize-patches).
@@ -16,19 +20,15 @@ weight: 2
 * You have configured Clouddriver to use MySQL or PostgreSQL. See the {{< linkWithTitle "clouddriver-sql-configure.md" >}} guide for instructions.
 * You have Spinnaker installed in one cluster, and an additional cluster to serve as your target deployment cluster.
 
-## Compatibility matrix
+### Compatibility matrix
 
 {{< include "agent/agent-compat-matrix.md" >}}
 
-## Overview
-
-The Agent consists of a plugin to Spinnaker's Clouddriver service and a K8s deployment that connects to Clouddriver. You can review the architecture in the Armory Agent [overview]({{< ref "armory-agent" >}}).
-
-## Networking requirements
+### Networking requirements
 
 Communication from the Agent to Clouddriver occurs over gRPC port 9091.
 
-## Kubernetes permissions required by the Agent
+### Kubernetes permissions required by the Agent
 
 The Agent can use a kubeconfig file loaded as a K8s secret (This is only appropriate when the agent runs in a separate cluster from the target cluster), or a service account in the cluster it resides in. Running Agent in the target cluster with a service account is the preferred model. 
 
