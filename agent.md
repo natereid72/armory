@@ -30,7 +30,7 @@ Communication from the Agent to Clouddriver occurs over gRPC port 9091.
 
 ### Kubernetes permissions required by the Agent
 
-The Agent can use a kubeconfig file loaded as a K8s secret (This is only appropriate when the agent runs in a separate cluster from the target cluster), or a service account in the cluster it resides in. Running Agent in the target cluster with a service account is the preferred model. 
+The Agent can use a kubeconfig file loaded as a K8s secret (This is only appropriate when the agent runs in a separate cluster from the target cluster), or as a service account in the cluster it resides in. Running Agent in the target cluster with a service account is the preferred model. 
 
 ## Step 1: Agent Clouddriver plugin installation
 
