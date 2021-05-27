@@ -120,7 +120,7 @@ spec:
 
 Once both manifests are configured, apply the update. Use ```kubectl get svc spin-agent-cloud-driver -n spinnaker``` to make note of the LB IP external address for use later.
 
-You can also use netcat to confirm Clouddriver is listening on port 9091:  ```nc -zv [LB address] 9091```
+You can also use netcat to confirm Clouddriver is listening on port 9091:  ```nc -zv [LB address] 9091```. Perform this check from a node in your Spinnaker cluster and your target cluster.
 
 ## Step 2: Agent Installation
 
@@ -320,3 +320,7 @@ spec:
       #     defaultMode: 420
       #     secretName: kubeconfigs-secret
 ```
+
+## Confirm Success
+
+Create a pipeline with a ```Deploy manifest``` stage. You should see your target cluster available in the ```Accounts``` list. Deploy a static manifest.
