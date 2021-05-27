@@ -36,7 +36,7 @@ The Agent can use a kubeconfig file loaded as a K8s secret (This is only appropr
 * If Agent is not running in the target cluster, the target cluster's `kubeconfigFile` is loaded from a K8s secret in the remote cluster. 
 
 
-## Step 1: Agent plugin installation
+## Step 1: Agent Clouddriver plugin installation
 
 This step is performed in the cluster the Spinnaker service is running in. You will add the Agent plugin to Clouddriver and expose it as type `LoadBalancer` on gRPC port `9091`.
 
