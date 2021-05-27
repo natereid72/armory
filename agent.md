@@ -34,7 +34,7 @@ The Agent can use a kubeconfig file loaded as a K8s secret (This is only appropr
 
 ## Step 1: Agent Clouddriver Plugin Installation
 
-This step is performed in the cluster Spinnaker service is running in. You will add the Clouddriver plugin and expose it as type `LoadBalancer` on gRPC port `9091`. In step 2, the Agent will be configured to communicate with Clouddriver.
+This step is performed in the cluster Spinnaker service is running. You will add the Clouddriver plugin and expose it as type `LoadBalancer` on gRPC port `9091`. In step 2, the Agent will be configured to communicate with Clouddriver.
 
 Add this manifest to your Kustomize patches:
 
