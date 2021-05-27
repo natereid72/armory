@@ -130,7 +130,7 @@ This installation is intended as a quickstart and does not include mTLS configur
 
 Create a namespace for the Agent to run in: ```kubectl create ns spin-agent```
 
-Create a service account, clusterrole, and clusterrolebinding for the Agent. Apply the following manifest:
+Create a service account, clusterrole, and clusterrolebinding for the Agent. Apply the following manifest in your spin-agent namespace:
 
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -251,13 +251,13 @@ roleRef:
   name: spin-cluster-role
 ```
 
-Create a configmap for the Agent config. Apply the following manifest:
+Create a configmap for the Agent config. Apply the following manifest to your spin-agent namespace:
 
 ```yaml
 
 ```
 
-The last task in this step is to apply the Agent deployment manifest, 
+The last task in this step is to apply the Agent deployment manifest in your spin-agent namespace: 
 
 ```yaml
 apiVersion: apps/v1
